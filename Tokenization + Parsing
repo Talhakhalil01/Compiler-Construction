@@ -1,0 +1,22 @@
+import re
+import ast
+
+
+string = "( a + ( b * c )"                                                         #Module 01
+print("Original string : " + str(string))  #Given string
+res = re.split("\a", string)    #Tokenization of string
+print(res)                   #Printing tokenized string
+
+
+code = ast.parse("( a + ( b * c ) )")  #Creating ast                               #Module 02
+print(ast.dump(code))       #Printing ast
+
+
+string = "( 3 + ( 5 * 2 )"                                                         #Module 01
+print("Original string : " + str(string))  #Given string
+res = re.split("\a", string)    #Tokenization of string
+print(res)                   #Printing tokenized string
+
+
+code = ast.parse("( 3 + ( 5 * 2 ) )")  #Creating ast                               #Module 02
+print(ast.dump(code))       #Printing ast
