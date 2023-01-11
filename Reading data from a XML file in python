@@ -1,0 +1,12 @@
+#import pandas as pd
+import xml.etree.ElementTree as ET
+Mydata = ET.parse("D:\Compilerfile.xml")
+root = Mydata.getroot()
+dataArr = []
+for book in root:
+    book_data = {"Book_id": book.get("id"), "Author_name": book.find("author").text, "Title": book.find("title").text,"Genre": book.find("genre").text,
+                 "Price": book.find("price").text, "Publish_date": book.find("publish_date").text, "Description": book.find("description").text}
+    dataArr.append(book_data)
+print(dataArr)
+#df = pd.DataFrame(dataArr)
+#df.to_excel("C:\Users\CHTALHA\Documents\file.xlsx",index=False)
